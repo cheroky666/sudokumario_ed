@@ -35,11 +35,10 @@ public class Sudokumario_ed_main {
                 do {
                     System.out.println("------------------------------------------------------------------------------------------------");
                     System.out.println("1. Iniciar/Reiniciar sudoku\n"
-                            
-                                         + "|   2. Realizar movimiento   |\n"
-                                         + "|   3. Vaciar casilla        | \n"
-                                         + "|   4. Mostrar sudoku        | \n" 
-                                         + "|   5. Terminar              |");
+                            + "|   2. Realizar movimiento   |\n"
+                            + "|   3. Vaciar casilla        | \n"
+                            + "|   4. Mostrar sudoku        | \n"
+                            + "|   5. Terminar              |");
                     System.out.println("|------------------------------------------------------------------------------------------------|");
                     respuesta = teclado.nextInt();
 
@@ -58,6 +57,16 @@ public class Sudokumario_ed_main {
                         int elemento = teclado.nextInt();
 
                         s.modificarElemento(fila, columna, elemento);
+                    } else if (respuesta == 3) {
+                        System.out.println("Dime las coordenadas de la casilla que quieres vaciar:");
+                        System.out.println("Fila: ");
+                        int fila = teclado.nextInt();
+                        System.out.println("Columna:");
+                        int columna = teclado.nextInt();
+
+                        s.vaciarElemento(fila, columna);
+                    } else if (respuesta == 4) {
+                        System.out.println(s.toString());
                     }
 
                 } while (respuesta < 1 || respuesta > 5 || respuesta != 5);
